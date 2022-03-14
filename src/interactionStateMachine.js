@@ -25,6 +25,7 @@ export class DefaultState {
   };
 
   handleDrawStart = (e, canvasDraw) => {
+    console.log('aviwashere')
     if (canvasDraw.props.disabled) {
       return new DisabledState();
     } else if (e.ctrlKey && canvasDraw.props.enablePanAndZoom) {
