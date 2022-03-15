@@ -4,12 +4,12 @@
  * 
  * Note: img must be fully loaded or have correct width & height set.
  */
-export default function drawImageProp({ctx, img, x, y, w, h, offsetX, offsetY} = {}) {
+export default function drawImageProp({ ctx, img, x, y, w, h, offsetX, offsetY } = {}) {
   // Defaults
   if (typeof x !== "number") x = 0;
   if (typeof y !== "number") y = 0;
-  if (typeof w !== "number") w = ctx.canvas.width;
-  if (typeof h !== "number") h = ctx.canvas.height;
+  if (typeof w !== "number") w = ctx.canvas.width / devicePixelRatio;
+  if (typeof h !== "number") h = ctx.canvas.height / devicePixelRatio;
   if (typeof offsetX !== "number") offsetX = 0.5;
   if (typeof offsetY !== "number") offsetY = 0.5;
 

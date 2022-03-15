@@ -532,15 +532,26 @@ export default class CanvasDraw extends PureComponent {
   };
 
   setCanvasSize = (canvas, width, height) => {
+    canvas.width = width;
+    canvas.height = height;
+    // canvas.style.width = width;
+    // canvas.style.height = height;
+    this.rescaleCanvasForHiDPI(canvas)
+  };
+
+  rescaleCanvasForHiDPI = (canvas) => {
     // Get the device pixel ratio.
     let pixelRatio = window.devicePixelRatio;
+
+    // Optionally print it to the console (if interested).
+    console.log(`Device Pixel Ratio: ${pixelRatio}`);
 
     // Get the actual screen (or CSS) size of the canvas.
     let sizeOnScreen = canvas.getBoundingClientRect();
 
     // Set our canvas size equal to that of the screen size x the pixel ratio.
-    canvas.width = width * pixelRatio;
-    canvas.height = height * pixelRatio;
+    canvas.width = sizeOnScreen.width * pixelRatio;
+    canvas.height = sizeOnScreen.height * pixelRatio;
 
     // Shrink back down the canvas CSS size by the pixel ratio, thereby 'compressing' the pixels.
     canvas.style.width = (canvas.width / pixelRatio) + 'px';
