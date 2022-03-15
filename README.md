@@ -1,5 +1,5 @@
 <div align="center">
-<h1>Avi's fork of React Canvas Draw</h1>
+<h1>React Canvas Draw</h1>
 </div>
 
 > A simple yet powerful canvas-drawing component for React ([Demo](https://embiem.github.io/react-canvas-draw/))
