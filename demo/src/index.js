@@ -67,7 +67,7 @@ class Demo extends Component {
         </p>
         <p>Try it out! Draw on this white canvas:</p>
         <CanvasDraw onChange={() => console.log("onChange")} />
-        <h2>Custom Brush-Color</h2>
+        {/* <h2>Custom Brush-Color</h2>
         <p>
           Let's spice things up by using custom brush colors{" "}
           <span>{`<CanvasDraw brushColor={this.state.color} />`}</span>. We
@@ -244,7 +244,7 @@ class Demo extends Component {
             source code of these examples
           </a>
           .
-        </p>
+        </p> */}
       </div>
     );
   }
